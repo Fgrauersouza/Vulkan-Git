@@ -44,6 +44,10 @@ private:
 
     void cleanup() {
 
+        glfwDestroyWindow(window);
+
+    glfwTerminate();
+
     }
 };
 
