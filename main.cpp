@@ -21,15 +21,17 @@ public:
     }
 
 private: 
+    GLFWwindow* window;
+    
     void initWindow() { 
     
-    glfwInit();
+        glfwInit();
     
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
     
     
-    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);   
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);   
      
     }    
 
@@ -40,8 +42,8 @@ private:
     void mainLoop() {
     
         while (!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
-    }
+            glfwPollEvents();
+        }
     
     }
 
