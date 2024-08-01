@@ -1,4 +1,7 @@
-#include <vulkan/vulkan.h>
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
+
+//#include <vulkan/vulkan.h> - não se esqueça de implementar GLFW
 
 #include <iostream>
 #include <stdexcept>
@@ -49,7 +52,6 @@ private:
     glfwTerminate();
 
     }
-<<<<<<< HEAD
     
     void createInstance() {
     
@@ -81,9 +83,6 @@ private:
        
     }
      
-    
-=======
->>>>>>> parent of 6d079ea (Alterações - Instance)
 };
 
 int main() {
