@@ -4,6 +4,10 @@
 #include <stdexcept>
 #include <cstdlib>
 
+const uint32_t WIDTH = 800;
+const uint32_t HEIGHT = 600;
+
+
 class HelloTriangleApplication {
 public:
     void run() {
@@ -22,6 +26,7 @@ private:
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
     
     
+    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);    
     }    
 
     void initVulkan() {
