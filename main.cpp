@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <cstdlib>
 #include <cstring>
+#include <vector>
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
@@ -72,6 +73,10 @@ private:
     }
     
     void createInstance() {
+         if (enableValidationLayers && !checkValidationLayerSupport()) {
+         throw std::runtime_error("validation layers requested, but not available!");
+         } 
+    
     
          VkApplicationInfo appInfo{};
          appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -117,13 +122,17 @@ private:
                     break;
                 }
             }
-    }
+    
       if (!layerFound) {
         return false;
         }
     }
+      
+     return true;  
+    }
+   
     
-    return true;
+    
     
 };
 
