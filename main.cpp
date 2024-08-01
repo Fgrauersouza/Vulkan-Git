@@ -37,6 +37,7 @@ private:
     }    
 
     void initVulkan() {
+        createInstance();
 
     }
 
@@ -49,10 +50,11 @@ private:
     }
 
     void cleanup() {
+        vkDestroyInstance(instance, nullptr);
 
         glfwDestroyWindow(window);
 
-    glfwTerminate();
+        glfwTerminate();
 
     }
     
