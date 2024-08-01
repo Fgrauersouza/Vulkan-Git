@@ -26,7 +26,8 @@ private:
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
     
     
-    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);    
+    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);   
+     
     }    
 
     void initVulkan() {
@@ -34,7 +35,11 @@ private:
     }
 
     void mainLoop() {
-
+    
+        while (!glfwWindowShouldClose(window)) {
+        glfwPollEvents();
+    }
+    
     }
 
     void cleanup() {
